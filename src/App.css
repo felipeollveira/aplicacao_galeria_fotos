@@ -1,0 +1,10 @@
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.photo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
