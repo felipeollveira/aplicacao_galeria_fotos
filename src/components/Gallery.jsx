@@ -12,7 +12,6 @@ const Gallery = () => {
   const [fetchError, setFetchError] = useState(null); // Guarda o erro e o status code
   const isFirstLoad = useRef(true);
 
-  
   useEffect(() => {
     const initializeGallery = async () => {
       try {
@@ -66,6 +65,12 @@ const Gallery = () => {
       }
     };
     
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  };
+  
 
   return (
     <div className="d-flex flex-column min-vh-100">
@@ -76,6 +81,7 @@ const Gallery = () => {
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
             handleSearch={handleSearch}
+            handleKeyDown={handleKeyDown}
           />
         </div>
       </header>
