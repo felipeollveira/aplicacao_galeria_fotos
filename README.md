@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Galeria de Fotos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é um projeto de uma galeria de fotos, onde os usuários podem buscar imagens com base em palavras-chave. O projeto utiliza React para renderizar as fotos. 
+Utilizo a API em 
+https://jsonplaceholder.typicode.com/
 
-## Available Scripts
+## Funcionalidades
 
-In the project directory, you can run:
+- **Busca em tempo real**: As fotos são filtradas conforme o usuário digita na barra de pesquisa. A busca é realizada a partir de um conjunto inicial de 50 fotos.
+- **Limitação de resultados**: Quando o usuário realiza uma busca, a galeria exibe no máximo 10 fotos de cada vez.
+- **Carregamento assíncrono**: As fotos são carregadas de forma assíncrona utilizando uma API, com exibição de um esqueleto de carregamento enquanto as imagens estão sendo recuperadas.
+- **Exibição de erro**: Se houver um erro na busca das fotos (como um problema de rede ou de servidor), uma mensagem de erro será exibida.
 
-### `npm start`
+## Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React**: Utilizado para construir a interface interativa.
+- **Bootstrap**: Para o estilo e o layout responsivo.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Estrutura do Código
 
-### `npm test`
+O código está estruturado com o objetivo de separar responsabilidades de maneira eficiente:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **`Gallery`**: Componente principal que contém a lógica de exibição das fotos, controle do estado da busca e renderização da galeria.
+- **`SearchBar`**: Componente que exibe a barra de pesquisa e trata a interação do usuário com a pesquisa.
+- **`PhotoCard`**: Componente responsável por renderizar uma única imagem.
+- **`SkeletonCard`**: Componente que simula o carregamento das imagens (um esqueleto de carregamento).
 
-### `npm run build`
+## Como Funciona a Busca
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+O fluxo da busca é baseado na variável `initialSubset`, que armazena um conjunto inicial de 50 fotos que são carregadas na primeira vez que o componente é montado. Este conjunto de imagens é então filtrado conforme o usuário digita na barra de pesquisa.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **`initialSubset`**: Armazena as 50 primeiras fotos carregadas da API.
+- **`filteredPhotos`**: Armazena as fotos que correspondem ao termo de pesquisa atual. Sempre que o usuário digita algo, `filteredPhotos` é atualizado com os resultados filtrados.
+- **Filtro**: O filtro é realizado utilizando o título da foto (`photo.title`). Ele compara o termo de pesquisa com o título de cada foto e exibe as fotos que contêm esse termo.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Como Rodar o Projeto
+1. Clone o repositório
+2. Navegue para a pasta do projeto:
+3. Instale as dependências:
+4. Inicie o servidor de desenvolvimento:
+````bash
+git clone https://github.com/felipeollveira/aplicacao_galeria_fotos
+cd aplicacao_galeria_fotos
+npm install
+npm start
