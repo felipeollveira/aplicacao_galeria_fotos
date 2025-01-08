@@ -8,3 +8,51 @@ button:hover {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
+.grid{
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+
+.header-div {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  padding: 10px 0;
+}
+.content {
+  margin-top: 100px; 
+}
+
+.skeleton {
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  animation: shimmer 1.5s infinite;
+  border: none;
+}
+
+.skeleton-img {
+  height: 180px;
+  margin-bottom: 10px;
+}
+
+.skeleton-title {
+  height: 20px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+@keyframes shimmer {
+  0% {
+    background-color: #e0e0e0;
+  }
+  50% {
+    background-color: #f0f0f0;
+  }
+  100% {
+    background-color: #e0e0e0;
+  }
+}
