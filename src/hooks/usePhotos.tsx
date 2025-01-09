@@ -16,7 +16,7 @@ const usePhotos = () => {
   const fetchPhotos = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await fetch('https://jsonplaceholder.typicode.com/photos');
+      const response = await fetch('https://jsonplaceholder.typicode.com/photos?');
       const data: Photo[] = await response.json(); 
       setPhotos(data);
     } catch (error) {
