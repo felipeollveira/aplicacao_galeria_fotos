@@ -2,9 +2,13 @@
 button:hover {
   background-color: #0056b3;
 }
-
+.photo-card{
+  transition-delay: 26ms;
+  transition-duration: 120ms;
+}
 .photo-card:hover {
-  transform: translateY(-5px);
+  opacity: 0.9;
+  transform: translateY(-8px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
