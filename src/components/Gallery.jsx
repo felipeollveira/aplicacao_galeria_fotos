@@ -94,7 +94,7 @@ const Gallery = () => {
             ) : (
               <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
                 {loading ? (
-                  // Renderiza Skeletons enquanto `loading` é verdadeiro
+                  // Renderiza os skeleton(loading cardd) enquanto ainda carrega ou loading true
                   Array.from({ length: 50 }).map((_, index) => (
                     <SkeletonCard key={index} />
                   ))
@@ -105,7 +105,8 @@ const Gallery = () => {
                   ))
                 ) : (
                   // Mensagem para caso nenhuma foto seja encontrada
-                  <h1 className="text-center text-danger">Nenhuma foto encontrada</h1>
+                    <h1 className="text-center text-danger">Nenhuma foto encontrada</h1>
+    
                 )}
               </div>
             )}
