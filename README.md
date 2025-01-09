@@ -24,6 +24,8 @@ O código está estruturado com o objetivo de separar responsabilidades de manei
 - **`SearchBar`**: Componente que exibe a barra de pesquisa e trata a interação do usuário com a pesquisa.
 - **`PhotoCard`**: Componente responsável por renderizar uma única imagem.
 - **`SkeletonCard`**: Componente que simula o carregamento das imagens (um esqueleto de carregamento), muito utilizado em sites como youtuube, instagram etc
+- **`usePhotos`**: Hook em typescript, aqui faco a requisicao na api; com typescript posso estruturar, definir os tipos e controlar o que vem da api com mais seguranca
+
 
 ## Como Funciona a Busca
 
